@@ -1,0 +1,90 @@
+@use 'variables';
+
+.infos {
+    background-image: linear-gradient(variables.$backgroundColor, variables.$pinkLight);
+
+    .container {
+        max-width: 700px;
+        padding-top: 30px;
+        display: flex;
+    }
+
+    &__title {
+        color: variables.$pinkDark;
+        font-size: 24px;
+        font-weight: bold;
+        padding-bottom: 50px;
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+
+        &__title {
+            font-size: 20px;
+            font-weight: bold;
+            padding-bottom: 8px;
+            color: lighten(variables.$greyDark, 20%);
+        }
+
+        &__text {
+            font-size: 16px;
+            padding-bottom: 24px;
+            color: lighten(variables.$greyDark, 20%);
+        }
+
+        &__image {
+            width: 360px;
+            margin-left: 50px;
+        }
+    }
+
+    &__footer {
+        font-family: 'Sacramento', cursive;
+        color: variables.$greyDark;
+        padding: 40px 0;
+        font-size: 44px;
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            padding: 30px 20px;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .container {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .infos {
+            &__description {
+                &__title {
+                    font-size: 18px;
+                }
+
+                &__text {
+                    font-size: 16px;
+                }
+
+                &__image {
+                margin: 0;
+                padding: 0 8px;
+                width: 100%;
+                }
+            }
+
+            &__title {
+                padding-bottom: 24px;
+                font-size: 20px;
+            }
+
+            &__footer {
+                padding: 20px 0;
+            }
+        }
+    }
+}

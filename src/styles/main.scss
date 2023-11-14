@@ -1,0 +1,36 @@
+@use 'hero';
+@use 'variables';
+@use 'infos';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Libre Baskerville', serif;
+}
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.button {
+    color: variables.$backgroundColor;
+    background-color: variables.$pinkDark;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 16px;
+    border: 1px solid variables.$backgroundColor;
+    padding: 22px;
+    text-decoration: none;
+    white-space: nowrap;
+
+    &:hover {
+        background-color: lighten(variables.$pinkDark, 5%);
+    }
+
+    @media (max-width: 640px) {
+        font-size: 16px;
+    }
+}
